@@ -37,7 +37,7 @@ class Baidu(Engine):
             # 如果图片满足格式规范,保存图片
             if (len(image_format) != 0):
                 print('IMAGE URL: ', url)
-                image_name = str(current_index) + '.' + image_format[0]
+                image_name = f'{str(current_index)}.{image_format[0]}'
                 if Util.download_image(url, self.storing_folder, image_name):
                     current_index += 1
             # 点击下一张图片按钮控件
