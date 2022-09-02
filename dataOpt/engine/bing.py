@@ -27,11 +27,11 @@ class Bing(Engine):
 
         img = self.web_driver.find_elements_by_css_selector("div.imgContainer > img")[0]
         current_index = 0
+        image_format = 'jpg'
         while img is not None:
             img_src = img.get_attribute('src')
-            image_format = 'jpg'
             print('IMAGE URL: ', img_src)
-            image_name = str(current_index) + '.' + image_format
+            image_name = f'{str(current_index)}.{image_format}'
             if Util.download_image(img_src, self.storing_folder, image_name):
                 current_index += 1
             self.web_driver.find_element_by_id("navr").click()

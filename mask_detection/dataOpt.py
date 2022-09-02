@@ -120,9 +120,4 @@ class CDataOpt:
     @staticmethod
     def imgClassify(img_path):
         img_arr = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
-        if img_arr is not None:
-            # img = cv2.resize(img_arr, (IMAGE_SIZE, IMAGE_SIZE))
-            # img = img.reshape((-1, IMAGE_SIZE, IMAGE_SIZE, 1))
-            return img_arr
-        else:
-            return 0
+        return img_arr if img_arr is not None else 0
